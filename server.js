@@ -22,7 +22,7 @@ const fixedText = "Olá, fico feliz que queira receber nosso PDF";
 const fixedHtml = "Olá, a seguir segue nosso PDF para recebimento <a href='https://drive.google.com/drive/folders/1l--CJkcsYmBAgrakJsLN63k2Pqd2oYsV?usp=sharing'>Clique aqui para baixar</a> =)";
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/cadastre-se.html");
 });
 
 app.post("/send-email", (req, res) => {
@@ -76,7 +76,7 @@ app.get("/download-pdf", (req, res) => {
     fileStream.pipe(res);
 });
 
-const PORT = process.env.PORT || 5500;
+const PORT = process.env.PORT || 5501;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });

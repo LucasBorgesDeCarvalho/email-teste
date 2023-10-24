@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--ICONE-->
+	<link rel="shortcut icon" href="medicine-clipart-medical-symbol-1.png" type="image/x-icon">
+    <title>Cadastro | EpiResolve - Escolhas Informadas para uma Saúde Melhor</title>
+    <!--AOS CSS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
+
+    <!-- Font awesome -->
+    <link 
+        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" 
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" 
+    />
+    <!--AOS JS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: white;
+}
+
+header {
+    background: linear-gradient(to top, rgba(2, 0, 36, 1) 0%, rgba(60, 171, 54, 1) 80%);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.navigation ul {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.navigation ul li a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.navigation ul li a:not(.btn)::after {
+    content: "";
+    background-color: #0be41d;
+    height: 3px;
+    width: 0%;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+.navigation ul li a:hover::after {
+    width: 100%;
+}
+
+/* Menu mobile */
+
+nav .menu-icon {
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    display: none;
+}
+
+nav .close-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+}
+
+.btn {
+    background-color: #16b608;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.1s;
+}
+
+.btn.animate-btn {
+    animation: animate-outline 1s ease-out infinite;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: rgb(5, 163, 53);
+    font-weight: 600;
+}
+
+@keyframes animate-outline {
+    from {
+        outline: 0px solid #07f0418a;
+    }
+    to {
+        outline: 15px solid #4f9bf900;
+    }
+}
+
+section,
+footer {
+    padding: 54px 0;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+p {
+    color: #0000009c;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+}
+
+.banner-text {
+    margin: 130px;
+    text-align: center;
+    padding: 0 90px;
+}
+
+.banner .banner-text h1 {
+    font-size: 75px;
+    color: white;
+}
+
+.banner .banner-text p {
+    font-size: 20px;
+    color: #ffffffb7;
+    font-weight: lighter;
+}
+
+/* main */
+.faca-mais {
+    background: linear-gradient(to top, rgba(2, 0, 36, 1) 0%, rgba(30, 192, 48, 1) 49%, rgba(60, 171, 54, 1) 100%);
+    overflow: hidden;
+    color: white;
+}
+
+.faca-mais .container {
+    display: flex;
+    align-items: center;
+}
+
+.faca-mais .faca-mais-text {
+    width: 50%;
+    padding: 0 40px;
+}
+
+.faca-mais .faca-mais-text p {
+    margin: 20px 0 15px 0;
+    color: white;
+}
+
+.faca-mais .faca-mais-img {
+    width: 50%;
+    margin-top: 15px;
+}
+
+.faca-mais .faca-mais-img img {
+    width: 100%;
+}
+
+/* Serviços */
+
+.comentarios h3 {
+    text-align: center;
+}
+
+.comentarios p {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-item {
+    background-color: #3bc046;
+    margin: 15px;
+    border-radius: 14px;
+    text-align: center;
+    width: 350px;
+    transition: 0.3s;
+}
+
+.card-item img {
+    border-radius: 0%;
+    width: 100%;
+    display: block;
+    margin: 10px auto;
+}
+
+.card-item .nome-user {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.card-item .comentario-user {
+    font-size: 15px;
+    padding: 0 15px;
+    transition: 0.3s;
+}
+
+.card-item .estrelas {
+    margin: 15px;
+    border-top: 2px solid #2f2f3150;
+    margin-bottom: 15px;
+}
+
+.card-item .btn {
+    margin-top: 15px;
+}
+
+.card-item .btn a {
+    color: white;
+}
+
+.card-item:hover {
+    background-color: rgb(16, 214, 72);
+    margin-top: -5px;
+}
+
+.card-item:hover .nome-user,
+.card-item:hover .comentario-user,
+.card-item:hover .estrelas i {
+    color: white;
+}
+
+/* footer */
+
+footer {
+    background-color: #3bc046;
+    text-align: center;
+}
+
+footer i {
+    color: #3bc046;
+    font-size: 19px;
+    background-color: white;
+    padding: 10px;
+    align-items: center;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+footer p {
+    margin-top: 20px;
+    color: white;
+}
+
+.local {
+    color: black;
+    background-color: #0be41d;
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 1058px) {
+
+    /* Home */
+    .faca-mais .faca-mais-text {
+        margin-top: 10px;
+        padding: 0 20px;
+        order: 1;
+    }
+
+    .faca-mais .container {
+        flex-direction: column;
+    }
+
+    .faca-mais .faca-mais-text h3 {
+        font-size: 48px;
+    }
+
+    .faca-mais .faca-mais-text,
+    .faca-mais .faca-mais-img {
+        width: 85%;
+    }
+
+    /* banner */
+    .banner .banner-text {
+        padding: 0;
+        margin: 80px;
+    }
+
+    .banner .banner-text h1 {
+        font-size: 60px;
+    }
+
+    .banner .banner-text p {
+        font-size: 15px;
+    }
+
+    .comentarios .card-item {
+        width: 75%;
+    }
+
+    /* Sobre */
+
+    .sobre .container {
+        flex-direction: column-reverse;
+    }
+
+    .sobre .sobre-img,
+    .sobre .sobre-text {
+        width: 75%;
+    }
+
+    .sobre .sobre-text {
+        margin-top: 40px;
+    }
+
+    /* Contato */
+    .contato .contato-info {
+        flex-direction: column-reverse;
+    }
+
+    .contato-info .right-side,
+    .contato-info .left-side {
+        width: 75%;
+    }
+
+    .contato-info .right-side {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 980px) {
+    .ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        clip-path: circle(0% at 100% 0);
+        transition: 0.7s;
+        background: #3bc046;
+        z-index: 999;
+    }
+
+    .ul.open {
+        clip-path: circle(141.2% at 100% 0);
+    }
+
+    .ul a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    nav .menu-icon {
+        display: block;
+    }
+
+    nav .close-icon {
+        display: block;
+        position: absolute;
+        top: 46px;
+        right: 28px;
+    }
+}
+
+@media (max-width: 830px) {
+    .logo {
+        width: 100%;
+    }
+
+    /* Menu mobile */
+    .ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        clip-path: circle(0% at 100% 0);
+        transition: 0.7s;
+        background: #3bc046;
+        z-index: 999;
+    }
+
+    .ul.open {
+        clip-path: circle(141.2% at 100% 0);
+    }
+
+    .ul a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    nav .menu-icon {
+        display: block;
+    }
+
+    nav .close-icon {
+        display: block;
+        position: absolute;
+        top: 46px;
+        right: 28px;
+    }
+
+    /* Home */
+    .faca-mais .faca-mais-text {
+        margin-top: 10px;
+        padding: 0 20px;
+        order: 1;
+    }
+
+    .faca-mais .container {
+        flex-direction: column;
+    }
+
+    .faca-mais .faca-mais-text h3 {
+        font-size: 48px;
+    }
+
+    .faca-mais .faca-mais-text,
+    .faca-mais .faca-mais-img {
+        width: 85%;
+    }
+
+    /* banner */
+    .banner .banner-text {
+        margin: 20px;
+        text-align: center;
+        padding: 5rem 10px;
+    }
+
+    .banner .banner-text h1 {
+        font-size: 65px;
+    }
+
+    .banner .banner-text p {
+        font-size: 14px;
+    }
+
+    .comentarios .card-item {
+        width: 75%;
+    }
+
+    /* Sobre */
+
+    .sobre .container {
+        flex-direction: column-reverse;
+    }
+
+    .sobre .sobre-img,
+    .sobre .sobre-text {
+        width: 75%;
+    }
+
+    .sobre .sobre-text {
+        margin-top: 40px;
+    }
+
+    /* Contato */
+    .contato .contato-info {
+        flex-direction: column-reverse;
+    }
+
+    .contato-info .right-side,
+    .contato-info .left-side {
+        width: 75%;
+    }
+
+    .contato-info .right-side {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .banner .banner-text h1 {
+        font-size: 30px;
+    }
+
+    .banner .banner-text p {
+        font-size: 13px;
+    }
+}
+
+.cadastro-info {
+    display: flex;
+    justify-content: space between;
+    margin-top: 50px;
+}
+
+.cadastro-info .left-side {
+    width: 50%;
+    padding: 30px;
+    background-color: #3bc046;
+    border-radius: 14px;
+    margin-right: 50px;
+    height: fit-content;
+}
+
+.cadastro-info .left-side div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cadastro-info .left-side div i {
+    font-size: 24px;
+    margin-right: 20px;
+    color: white;
+}
+
+.cadastro-info .left-side p {
+    font-size: 17px;
+    color: white;
+}
+
+.cadastro-info .right-side {
+    width: 50%;
+}
+
+.cadastro-info .right-side input {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    height: 47px;
+    padding: 15px;
+    border-radius: 9px;
+    transition: 0.3s;
+    border: 1px solid #f1f1f1;
+    color: #212121;
+    font-weight: lighter;
+}
+
+.cadastro-info .right-side input:focus,
+.cadastro-info .right-side textarea:focus {
+    border-color: #3bc046;
+}
+
+.cadastro-info .right-side textarea {
+    border: 1px solid #f1f1f1;
+    color: #212121;
+    border-radius: 9px;
+    margin-bottom: 10px;
+    padding: 15px;
+    width: 100%;
+    transition: 0.3s;
+    resize: none;
+}
+
+.cadastro-info .right-side button {
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .cadastro-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cadastro-info .left-side {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .cadastro-info .right-side {
+        width: 100%;
+    }
+}
+
+</style>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navigation">
+                <a href="https://epi-resolve-escolhas-informadas-para-uma-saude-melhor.vercel.app/index.html">
+                    <img class="logo" src="https://epi-resolve-escolhas-informadas-para-uma-saude-melhor.vercel.app/assets/imgs/logo.png" alt="Logo">
+                </a>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul class="ul" id="menu">
+                    <li><a href="https://epi-resolve-escolhas-informadas-para-uma-saude-melhor.vercel.app/index.html">Home</a></li>
+                    <li><a href="https://epi-resolve-escolhas-informadas-para-uma-saude-melhor.vercel.app/sobre.html">Sobre</a></li>
+                    <li><a href="https://epi-resolve-escolhas-informadas-para-uma-saude-melhor.vercel.app/servico.html">Serviços</a></li>
+                    <li><a class="btn" href="cadastre-se.html">Cadastrar</a></li>
+                    <div class="close-icon" onclick="toggleMenu()">
+                        <i class="fa fa-times-circle"></i>
+                    </div>
+                </ul>
+            </nav>
+    
+            <section class="banner">
+                <div class="banner-content">
+                    <div class="banner-text">
+                        <h1>Cadastre-se</h1>
+                        <p>Bem-vindo à nossa página de Cadastro de Informações sobre Doenças!</p>
+                    </div>
+                </div>
+            </section>
+            
+            
+        </div>
+    </header>
+    
+
+
+    <section class="cadastro">
+        <div class="container">
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124433.49889494886!2d-38.56295590273434!3d-12.936821199999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x716119890d5849f%3A0xf254f0c62d1ffe87!2sUNIJORGE!5e0!3m2!1spt-BR!2sbr!4v1694453014997!5m2!1spt-BR!2sbr" 
+    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="cadastro-info">
+                <div class="left-side">
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p>Av. Luis Viana 6775 (Paralela), Salvador, BA, 41745-027</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p>lucas.carvalho30111@gmail.com</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <p>(00) 00000-0000</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <p>(00) 00700-0000</p>
+                    </div>
+                </div>
+
+                <div class="right-side">
+                    <form action="/send-email" method="post">
+                        <input type="text" id="subject" name="subject" placeholder="Nome" required>
+                        <input type="email" id="to" name="to" placeholder="Email" required>
+                        <button type="submit" class="btn">Enviar mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="links">
+            <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <p>Copyright 2023 | EpiResolve - Todos os Direitos Reservados.</p>
+    </div>
+</footer>
+<!--End Footer-->
+
+</body>
+<script>
+    function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("open");
+}
+
+</script>
+</html>
