@@ -206,103 +206,100 @@ p {
     width: 100%;
 }
 
-/* Serviços */
-
-.comentarios h3 {
-    text-align: center;
-}
-
-.comentarios p {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.card-item {
-    background-color: #3bc046;
-    margin: 15px;
-    border-radius: 14px;
-    text-align: center;
-    width: 350px;
-    transition: 0.3s;
-}
-
-.card-item img {
-    border-radius: 0%;
-    width: 100%;
-    display: block;
-    margin: 10px auto;
-}
-
-.card-item .nome-user {
-    font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 15px;
-    transition: 0.3s;
-}
-
-.card-item .comentario-user {
-    font-size: 15px;
-    padding: 0 15px;
-    transition: 0.3s;
-}
-
-.card-item .estrelas {
-    margin: 15px;
-    border-top: 2px solid #2f2f3150;
-    margin-bottom: 15px;
-}
-
-.card-item .btn {
-    margin-top: 15px;
-}
-
-.card-item .btn a {
-    color: white;
-}
-
-.card-item:hover {
-    background-color: rgb(16, 214, 72);
-    margin-top: -5px;
-}
-
-.card-item:hover .nome-user,
-.card-item:hover .comentario-user,
-.card-item:hover .estrelas i {
-    color: white;
-}
-
 /* footer */
-
 footer {
-    background-color: #3bc046;
-    text-align: center;
+    background: linear-gradient(to bottom, #48E349, #2C952C);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px;
 }
 
-footer i {
-    color: #3bc046;
-    font-size: 19px;
-    background-color: white;
-    padding: 10px;
-    align-items: center;
-    margin: 3px;
-    border-radius: 10px;
+footer img,
+footer .titulo {
+    display: block;
+    font-weight: 600;
+}
+
+.titulo {
+    color: #1f1c1c;
+    margin-bottom: 15px;
+}
+
+a h1{
+    color: #D5FFC1;
+}
+
+footer a,
+footer nav a,
+footer p,
+footer p a {
+    color: #D5FFC1;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+footer a,
+footer nav a {
+    display: inline-block;
 }
 
 footer p {
-    margin-top: 20px;
-    color: white;
+    color: #1f1c1c;
+    margin-bottom: 10px;
+    max-width: 100%;
 }
 
-.local {
-    color: black;
-    background-color: #0be41d;
+#copyright {
+    background-color: #1B641B;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
 }
+
+#copyright a {
+    color: #FFF288;
+}
+
+/* Responsividade Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px;
+    }
+    
+    .titulo {
+        font-size: 18px;
+        margin-bottom: 12px; 
+    }
+
+    footer p {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .titulo {
+        font-size: 16px; 
+        margin-bottom: 10px; 
+    }
+
+    footer a,
+    footer nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    footer p {
+        margin-bottom: 8px; 
+    }
+}
+
 
 /* RESPONSIVIDADE */
 @media screen and (max-width: 1058px) {
@@ -597,9 +594,22 @@ footer p {
     resize: none;
 }
 
+div h2{
+    color: #3bc046;
+    margin: 15px;
+}
+
 .cadastro-info .right-side button {
     border: none;
 }
+
+.linha {
+        border: none;
+        height: 1px;
+        background-color: #dde2df;
+        margin: 20px 0;
+    }
+
 
 @media screen and (max-width: 768px) {
     .cadastro-info {
@@ -665,27 +675,27 @@ footer p {
             <div class="cadastro-info">
                 <div class="left-side">
                     <div>
-                        <i class="fa fa-map-marker"></i>
-                        <p>Av. Luis Viana 6775 (Paralela), Salvador, BA, 41745-027</p>
+                        <p>Complete o formulário abaixo para receber um PDF detalhado sobre doenças relevantes para a saúde pública. Este material aborda minuciosamente as causas, sintomas, tratamentos e medidas preventivas de cada condição. Além disso, para um entendimento mais abrangente, recomendamos explorar o site da Epiresolve, onde você encontrará recursos e orientações adicionais sobre essas enfermidades.</p>
+                    </div>
+
+                    <hr class="linha">
+                    
+                    <div>
+                        <i class="fa fa-whatsapp"></i>
+                        <p>+55 (71) 98765-4326</p>
                     </div>
 
                     <div>
                         <i class="fa fa-envelope"></i>
-                        <p>lucas.carvalho30111@gmail.com</p>
-                    </div>
-
-                    <div>
-                        <i class="fa fa-phone"></i>
-                        <p>(00) 00000-0000</p>
-                    </div>
-
-                    <div>
-                        <i class="fa fa-phone"></i>
-                        <p>(00) 00700-0000</p>
+                        <p>epiresolve@gmail.com</p>
                     </div>
                 </div>
+                
 
                 <div class="right-side">
+                    <div>
+                        <h2>Área de Cadastro</h2>
+                    </div>
                     <form action="/send-email" method="post">
                         <input type="text" id="subject" name="subject" placeholder="Nome" required>
                         <input type="email" id="to" name="to" placeholder="Email" required>
@@ -697,18 +707,33 @@ footer p {
     </section>
 
     <!--Footer-->
-<footer class="footer">
-    <div class="container">
-        <div class="links">
-            <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+    <footer>
+        <div>
+          <a href="index.html"><h1>EPIRESOLVE</h1></a>
+          <p>Escolhas Informadas para uma Saúde Melhor</p>
         </div>
-        <p>Copyright 2023 | EpiResolve - Todos os Direitos Reservados.</p>
-    </div>
-</footer>
-<!--End Footer-->
+    
+        <div>
+          <strong class="titulo">Links rápidos</strong>
+          <nav>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servico.html">Serviços</a></li>
+            <li><a href="https://email-teste.vercel.app/">Cadastrar</a></li>
+          </nav>
+        </div>
+    
+        <div>
+          <strong class="titulo">Encontre-nos</strong>
+          <p>Whatsapp:<a href="https:///wa.me/5571987654326" target="_blank">+55 (71) 98765-4326</a></p>
+          <p>Email:<a href="mailto:epiresolve@gmail.com">epiresolve@gmail.com</a></p>
+          <p>Endereço: <a href="">Av. 7 de Jorge Amado, nº260</a></p>
+        </div>
+      </footer>
+      <div id="copyright">
+        Desenvolvido por <a href="" target="blank">@LucasBorgesDeCarvalho</a>
+      </div>
+    <!--End Footer-->
 
 </body>
 <script>
