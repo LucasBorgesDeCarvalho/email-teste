@@ -7,20 +7,12 @@
     <!--ICONE-->
 	<link rel="shortcut icon" href="medicine-clipart-medical-symbol-1.png" type="image/x-icon">
     <title>Cadastro | EpiResolve - Escolhas Informadas para uma Saúde Melhor</title>
-    <!--AOS CSS-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-    <!--CSS-->
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/cadastro.css">
-
     <!-- Font awesome -->
     <link 
         rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" 
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" 
     />
-    <!--AOS JS-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -41,6 +33,10 @@ body {
     height: 100vh;
     position: relative;
     background-color: white;
+}
+
+.logo {
+    width: 45%;
 }
 
 header {
@@ -175,37 +171,6 @@ p {
     font-weight: lighter;
 }
 
-/* main */
-.faca-mais {
-    background: linear-gradient(to top, rgba(2, 0, 36, 1) 0%, rgba(30, 192, 48, 1) 49%, rgba(60, 171, 54, 1) 100%);
-    overflow: hidden;
-    color: white;
-}
-
-.faca-mais .container {
-    display: flex;
-    align-items: center;
-}
-
-.faca-mais .faca-mais-text {
-    width: 50%;
-    padding: 0 40px;
-}
-
-.faca-mais .faca-mais-text p {
-    margin: 20px 0 15px 0;
-    color: white;
-}
-
-.faca-mais .faca-mais-img {
-    width: 50%;
-    margin-top: 15px;
-}
-
-.faca-mais .faca-mais-img img {
-    width: 100%;
-}
-
 /* footer */
 footer {
     background: linear-gradient(to bottom, #48E349, #2C952C);
@@ -304,59 +269,6 @@ footer p {
 /* RESPONSIVIDADE */
 @media screen and (max-width: 1058px) {
 
-    /* Home */
-    .faca-mais .faca-mais-text {
-        margin-top: 10px;
-        padding: 0 20px;
-        order: 1;
-    }
-
-    .faca-mais .container {
-        flex-direction: column;
-    }
-
-    .faca-mais .faca-mais-text h3 {
-        font-size: 48px;
-    }
-
-    .faca-mais .faca-mais-text,
-    .faca-mais .faca-mais-img {
-        width: 85%;
-    }
-
-    /* banner */
-    .banner .banner-text {
-        padding: 0;
-        margin: 80px;
-    }
-
-    .banner .banner-text h1 {
-        font-size: 60px;
-    }
-
-    .banner .banner-text p {
-        font-size: 15px;
-    }
-
-    .comentarios .card-item {
-        width: 75%;
-    }
-
-    /* Sobre */
-
-    .sobre .container {
-        flex-direction: column-reverse;
-    }
-
-    .sobre .sobre-img,
-    .sobre .sobre-text {
-        width: 75%;
-    }
-
-    .sobre .sobre-text {
-        margin-top: 40px;
-    }
-
     /* Contato */
     .contato .contato-info {
         flex-direction: column-reverse;
@@ -410,8 +322,8 @@ footer p {
 }
 
 @media (max-width: 830px) {
-    .logo {
-        width: 100%;
+    .logo{
+        width: 55%;
     }
 
     /* Menu mobile */
@@ -449,61 +361,6 @@ footer p {
         top: 46px;
         right: 28px;
     }
-
-    /* Home */
-    .faca-mais .faca-mais-text {
-        margin-top: 10px;
-        padding: 0 20px;
-        order: 1;
-    }
-
-    .faca-mais .container {
-        flex-direction: column;
-    }
-
-    .faca-mais .faca-mais-text h3 {
-        font-size: 48px;
-    }
-
-    .faca-mais .faca-mais-text,
-    .faca-mais .faca-mais-img {
-        width: 85%;
-    }
-
-    /* banner */
-    .banner .banner-text {
-        margin: 20px;
-        text-align: center;
-        padding: 5rem 10px;
-    }
-
-    .banner .banner-text h1 {
-        font-size: 65px;
-    }
-
-    .banner .banner-text p {
-        font-size: 14px;
-    }
-
-    .comentarios .card-item {
-        width: 75%;
-    }
-
-    /* Sobre */
-
-    .sobre .container {
-        flex-direction: column-reverse;
-    }
-
-    .sobre .sobre-img,
-    .sobre .sobre-text {
-        width: 75%;
-    }
-
-    .sobre .sobre-text {
-        margin-top: 40px;
-    }
-
     /* Contato */
     .contato .contato-info {
         flex-direction: column-reverse;
@@ -520,6 +377,10 @@ footer p {
 }
 
 @media (max-width: 500px) {
+    .logo{
+        width: 75%;
+    }
+
     .banner .banner-text h1 {
         font-size: 30px;
     }
@@ -633,7 +494,7 @@ div h2{
     <header>
         <div class="container">
             <nav class="navigation">
-                <a href="https://epi-resolve-escolhas-informadas-para-uma-saude-melhor.vercel.app/index.html">
+                <a href="logo.png">
                     <img class="logo" src="https://epi-resolve-escolhas-informadas-para-uma-saude-melhor.vercel.app/assets/imgs/logo.png" alt="Logo">
                 </a>
                 <div class="menu-icon" onclick="toggleMenu()">
